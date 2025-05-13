@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Projectname and creator:
-# Cyber-Security Project 6: NETWORK SECURITY | PROJECT: DOMAINMAPS
+# Cyber-Security PROJECT: DOMAINMAPS
 # Creator of the project: Hadroxx
 
 
@@ -137,7 +137,7 @@ done
 
 
 
-# 1.3. Prompt the user to choose a password list, defaulting to Rockyou if none is specified.
+# Prompt the user to choose a password list, defaulting to Rockyou if none is specified.
 
 read -p "Do you wish to supply your own password list? (y/n) " REPLY
 
@@ -167,8 +167,7 @@ export PASSLIST  # PASSLIST is exported globally
 
 
 
- # Username-list promp # 1.3. Prompt the user to choose a password list, defaulting to Rockyou if none is specified.
-# Username-list prompt
+ # Prompt the user to choose a password list, defaulting to Rockyou if none is specified.
 read -p "Do you wish to supply your own userlist? (y/n) " REPLY
 
 if [[ $REPLY == "Y" || $REPLY == "y" ]]; then
