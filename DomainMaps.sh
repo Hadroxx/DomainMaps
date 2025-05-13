@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Projectname and creator:
-# Cyber-Security Project 6: NETWORK SECURITY | PROJECT: DOMAIN MAPPER
-# Creator of the project: Isak S., studentcode s12, UNIT: TMagen773630
-# Lecturer: Erel
+# Cyber-Security Project 6: NETWORK SECURITY | PROJECT: DOMAINMAPS
+# Creator of the project: Hadroxx
 
 
 # Start of project
@@ -60,15 +59,6 @@ sleep 2
 
 function INPUT()
 {
-# TASKS:
-# 1. Getting the User Input
-# 1.1. Prompt the user to enter the target network range for scanning.
-# 1.2. Ask for the Domain name and Active Directory (AD) credentials.
-# 1.3. Prompt the user to choose a password list, defaulting to Rockyou if none is specified.
-# 1.4. Require the user to select a desired operation level (Basic, Intermediate,or Advanced) for each mode: Scanning, Enumeration, Exploitation.
-# Note: Selection of a higher level automatically encompasses the capabilities of the preceding levels.
-# Here I do 1.1 - 1.4 at the same time, to make it more efficient and less cluttered on the terminal-screen.
-
 # Asking the user for input and saving it into a variable
 get_user_input() {
     echo "[*] To run this script, please input the following:"
@@ -114,7 +104,6 @@ get_user_input() {
 }
 
 # Loop until the user confirms the input is correct.
-# I simply copied this while-loop from a previous project and re-made it to fit this project. 
 while true
 do
     get_user_input
@@ -215,46 +204,6 @@ echo
 echo
 echo "Continuing the scrip based on selected mode"
 }
-
-
-
-
-# TASKS:
-### Scanning Mode
-# 2.1. Basic: Use the -Pn option in Nmap to assume all hosts are online, bypassing the discovery phase.
-# 2.2. Intermediate: Scan all 65535 ports using the -p- flag.
-# 2.3. Advanced: Include UDP scanning for a thorough analysis.
-### Enumeration Mode
-# 3.1. Basic:
-# 3.1.1. Identify services (-sV) running on open ports.
-# 3.1.2. Identify the IP Address of the Domain Controller.
-# 3.1.3. Identify the IP Address of the DHCP server.
-# 3.2. Intermediate:
-# 3.2.1. Enumerate IPs for key services: FTP, SSH, SMB, WinRM, LDAP, RDP.
-# 3.2.2. Enumerate shared folders.
-# 3.2.3. Add three (3) NSE scripts you think can be relevant for enumerating domain networks.
-# 3.3. Advanced (Only if AD credentials were entered):
-# 3.3.1. Extract all users.
-# 3.3.2. Extract all groups.
-# 3.3.3. Extract all shares.
-# 3.3.4. Display password policy.
-# 3.3.5. Find disabled accounts.
-# 3.3.6. Find never-expired accounts.
-# 3.3.7. Display accounts that are members of the Domain Admins group
-### Exploitation Mode
-# 4.1. Basic: Deploy the NSE vulnerability scanning script.
-# 4.2. Intermediate: Execute domain-wide password spraying to identify weak credentials.
-# 4.3. Advanced: Extract and attempt to crack Kerberos tickets using pre-supplied passwords.
-
-
-
-
-#NOTE: I built the functions in a way that takes the entire process and runs it within each mode.
-### The coming functions are based on the modes chosen above (as specified in TASKS).
-### This encapsulate the full TASKS of the given mode, which includes scanning, enumeration and exploitation.
-### Each higher-level mode incorporates the previous mode (Intermediate incorporates Basic, Advanced incorporates Intermediate + Basic)
-### This means that for each Mode the function will perform everything within the tasks, from scanning until logging, and then continue on to the next mode.
-
 
 
 
